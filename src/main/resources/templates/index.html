@@ -27,6 +27,11 @@
                 <td th:text="${prod.description}"></td>
                 <td th:text="${prod.price}"></td>
                 <td th:text="${prod.stock}"></td>
+                <td>
+                    <a th:href="@{/product-open/{id}(id=${prod.id})}" class="button">Открыть</a>
+                    <a th:href="@{/product-update/{id}(id=${prod.id})}" class="button">Обновить</a>
+                    <a th:href="@{/product-delete/{id}(id=${prod.id})}" class="button">Удалить</a>
+                </td>
             </tr>
         </tbody>
     </table>

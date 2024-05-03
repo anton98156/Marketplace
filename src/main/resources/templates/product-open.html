@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукт на ветрине</title>
+</head>
+<body>
+    <h1 align="center" span th:text="${product.name}"></h1>
+    <div>
+        <div th:each="prod : ${product}">
+            <p>ID: <span th:text="${prod.id}"></span></p>
+            <p>Название: <span th:text="${prod.name}"></span></p>
+            <p>Описание: <span th:text="${prod.description}"></span></p>
+            <p>Цена: <span th:text="${prod.price}"></span></p>
+            <p>В наличии: <input type="checkbox" th:if="${prod.stock}" checked="checked" disabled>
+            <input type="checkbox" th:unless="${prod.stock}" disabled></p>
+        </div>
+    </div>
+    <p><a href="/" class="button" id="simpleButton">Вернуться к отчету</a></p>
+</body>
+</html>
