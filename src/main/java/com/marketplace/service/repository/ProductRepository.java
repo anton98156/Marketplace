@@ -17,8 +17,8 @@ public class ProductRepository {
 
     // Сохранение нового товара.
     public Product save(Product product) {
-        String sql = "INSERT INTO productTable (name, description, price) VALUES (?, ?, ?)";
-        jdbc.update(sql, product.getName(), product.getDescription(), product.getPrice());
+        String sql = "INSERT INTO productTable (name, description, price, stock) VALUES (?, ?, ?, ?)";
+        jdbc.update(sql, product.getName(), product.getDescription(), product.getPrice(), product.getStock());
         return product;
     }
 
@@ -31,6 +31,7 @@ public class ProductRepository {
             rowObject.setName(r.getString("name"));
             rowObject.setDescription(r.getString("description"));
             rowObject.setPrice(r.getInt("price"));
+            rowObject.setStock(r.getBoolean("stock"));
             return rowObject;
         };
 
@@ -46,6 +47,7 @@ public class ProductRepository {
             rowObject.setName(r.getString("name"));
             rowObject.setDescription(r.getString("description"));
             rowObject.setPrice(r.getInt("price"));
+            rowObject.setStock(r.getBoolean("stock"));
             return rowObject;
         };
 
@@ -54,8 +56,8 @@ public class ProductRepository {
 
     // Обновление продукта.
     public Product updateById(Product product, int id) {
-        String sql = "UPDATE productTable SET name = ?, description = ?, price = ? WHERE id = ?";
-        jdbc.update(sql, product.getName(), product.getDescription(), product.getPrice(), id);
+        String sql = "UPDATE productTable SET name = ?, description = ?, price = ?, stock = ? WHERE id = ?";
+        jdbc.update(sql, product.getName(), product.getDescription(), product.getPrice(), product.getStock(), id);
         return product;
     }
 

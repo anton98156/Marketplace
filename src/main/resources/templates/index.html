@@ -10,6 +10,30 @@
     <div>
         <h1 align="center">Цифровая витрина</h1>
     </div>
+    <table id="tableContainer">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Цена</th>
+                <th>Наличие</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="prod : ${products}">
+                <td th:text="${prod.id}"></td>
+                <td th:text="${prod.name}"></td>
+                <td th:text="${prod.description}"></td>
+                <td th:text="${prod.price}"></td>
+                <td th:text="${prod.stock}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div th:if="${#lists.isEmpty(products)}">
+        <p style="font-size: 25px;">Полки пустые!</p>
+    </div>
+    <p><a href="/product-create" class="button" id="addButton">Добавить</a></p>
     <script th:src="@{/index.js}"></script>
 </body>
 </html>

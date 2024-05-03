@@ -7,6 +7,7 @@ public class Product {
     private String name;
     private String description;
     private int price;
+    private boolean stock;
 
     public void setId(int id) {
         this.id = id;
@@ -38,6 +39,14 @@ public class Product {
 
     public int getPrice() {
         return price;
+    }
+
+    public void setStock(boolean stock) {
+        this.stock = stock;
+    }
+
+    public boolean getStock() {
+        return stock;
     }
 
 }

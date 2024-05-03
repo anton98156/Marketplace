@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый товар</title>
+</head>
+<body>
+    <h1 th:text="'Добавление товара'">Заголовок</h1>
+    <form action="#" th:action="@{/product-create}" th:object="${product}" method="post">
+        <label for="name">Название</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="введите название">
+        <br/>
+        <label for="description">Описание</label>
+        <input type="text" th:field="*{description}" id="description" placeholder="введите описание">
+        <br/>
+        <label for="price">Цена</label>
+        <input type="text" th:field="*{price}" id="price" placeholder="введите стоимость">
+        <br/>
+        <label for="stock">В наличии</label>
+        <input type="checkbox" th:field="*{stock}" id="stock">
+        <br/>
+        <input type="submit" value="Добавить">
+    </form>
+</body>
+</html>
