@@ -1,7 +1,9 @@
 package com.marketplace.service.repository;
 
-import com.marketplace.service.entity.Product;
 import org.springframework.stereotype.Repository;
+
+import com.marketplace.service.object.Product;
+
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import java.util.List;

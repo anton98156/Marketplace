@@ -1,11 +1,13 @@
-package com.marketplace.service.controller;
+package com.marketplace.service.endpoint;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.marketplace.service.object.Product;
 import com.marketplace.service.service.ProductService;
-import com.marketplace.service.entity.Product;
+
 import org.springframework.ui.Model;
 import java.util.List;
 

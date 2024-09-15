@@ -1,7 +1,8 @@
 package com.marketplace.service.service;
 
 import org.springframework.stereotype.Service;
-import com.marketplace.service.entity.Product;
+
+import com.marketplace.service.object.Product;
 import com.marketplace.service.repository.ProductRepository;
 import java.util.List;
 

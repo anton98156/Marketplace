@@ -1,4 +1,4 @@
-package com.marketplace.service.entity;
+package com.marketplace.service.object;
 
 public class Product {
     
